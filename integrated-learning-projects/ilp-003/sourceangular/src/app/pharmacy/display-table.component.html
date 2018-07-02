@@ -1,0 +1,53 @@
+<div class="container .d-inline">
+  <form  (ngSubmit)="onSubmit(f)" #f="ngForm" class="row">
+    <label class="sr-only" for="namesearch">Name Search</label>
+                <input type="text" 
+                        id="namesearch" 
+                        name="namesearch"
+                        class="col-md-3"
+                        ngModel
+                        placeholder="Enter Name For Search">
+                <button class="btn btn-primary">Search</button>        
+    </form>
+    <button class="btn btn-danger row"(click)="onClear()">Clear Search</button>
+</div>
+
+                        <hr>
+<div class="container ">
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Manufacturer</th>
+                    <th>Batch No.</th>
+                    <th>Expiration Date</th>
+                    <th *ngIf="hideElement">Price</th>
+                    <th *ngIf="hideElement">Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pharmacystock of pharmacystocks">
+                    <td>{{pharmacystock?.id}}</td>
+                    <td>{{pharmacystock?.name}}</td>
+                    <td>{{pharmacystock?.manufacturer}}</td>
+                    <td>{{pharmacystock?.batchNo}}</td>
+                    <td>{{pharmacystock?.expirationDate}}</td>
+                    <td *ngIf="hideElement">{{pharmacystock?.price}}</td>
+                    <td *ngIf="hideElement">{{pharmacystock?.type}}</td>
+                    <td>
+                      <button class="btn btn-primary" type="button" (click)="onEdit(pharmacystock)">
+                        Edit
+                      </button>
+                    </td>
+                    <td><button class="btn btn-danger" (click)="onDelete(pharmacystock)">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+</div>
+<a [routerLink]="['add']">
+<button class="btn btn-primary">
+  Add PharmacyStock
+</button>
+</a>
+<button class="btn btn-primary" (click)="isHideElement(hideElement)">{{filterColumn}}</button>

@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    form.form-horizontal(action='/add', method="post")
+     .form-group
+        label.control-label.col-sm-4(for='Name') Name:
+        .col-sm-4
+          input.form-control(type='text', placeholder='Enter Name', name="Name")
+     .form-group
+        label.control-label.col-sm-4(for='Manufacturer') Manufacturer:
+        .col-sm-4
+          input.form-control(type='text', placeholder='Enter Manufacturer', name="Manufacturer")
+     .form-group
+        label.control-label.col-sm-4(for='Batch_No') Batch_No:
+        .col-sm-4
+          input.form-control(type='text', placeholder='Enter Batch_No', name="Batch_No")
+     .form-group
+        label.control-label.col-sm-4(for='Expiration_Date') Expiration_Date:
+        .col-sm-4
+          input.form-control(type='date', placeholder='Enter Expiration_Date', name="Expiration_Date")
+     .form-group
+        label.control-label.col-sm-4(for='Price') Price:
+        .col-sm-4
+          input.form-control(type='text', placeholder='Enter Price', name="Price")
+     .form-group
+        label.control-label.col-sm-4(for='Type') Type:
+        .col-sm-4
+          select.form-control(name='Type')
+            option(value='', selected='', disabled='') --Select Type--
+            option(value='Capsule') Capsule
+            option(value='Tablet') Tablet
+            option(value='Syrup') Syrup
+            option(value='Gel') Gel
+     .form-group
+        .col-sm-offset-4.col-sm-8
+         button.btn.btn-primary(type='submit') Submit

@@ -1,0 +1,1 @@
+Capstone Project related details can be put here. For example, how to execute this project, what to expect as a result can be put here.

@@ -1,0 +1,56 @@
+<div class="container-fluid ">
+        <h4>Add / Edit Stocks</h4>
+            <form class="form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div>
+                <label class="sr-only" for="name">Name</label>
+                <input type="text"
+                       id="name" 
+                       name="name"
+                       class="col-md-2"
+                       [ngModel]=pharmacyStock?.name
+                       placeholder="Name">
+                </div>
+                <label class="sr-only" for="manufacturer">Manufacturer</label>
+                <input type="text" 
+                        id="manufacturer" 
+                        name="manufacturer"
+                        class="col-md-2"
+                        [ngModel]=pharmacyStock?.manufacturer
+                        placeholder="Manufacturer">
+                
+                <label class="sr-only" for="batchNo">Batch No.</label>
+                <input type="text" 
+                       id="batchNo" 
+                       name="batchNo"
+                       class="col-md-2" 
+                       [ngModel]=pharmacyStock?.batchNo
+                       placeholder="Batch No">
+                
+                <label class="sr-only" for="expirationDate">Expiration Date</label>
+                <input type="date"
+                       id="expirationDate" 
+                       name="expirationDate"
+                       class="col-md-2"
+                       [ngModel]=pharmacyStock?.expirationDate 
+                       placeholder="Expiration Date">
+                
+                <label class="sr-only" for="price">Price</label>
+                <input type="text" 
+                       id="price" 
+                       name="price"
+                       class="col-md-1"
+                       [ngModel]=pharmacyStock?.price
+                       placeholder="Price">
+                
+                <label class="sr-only" for="type">Type</label>
+                     Type:<select name="type" id="type" class="col-md-2" [ngModel]=pharmacyStock?.type class="bootstrap-select">
+                        <option value="Capsule">Capsule</option>
+                        <option value="Tablet">Tablet</option>
+                        <option value="Syrup">Syrup</option>
+                        <option value="Gel">Gel</option>
+                      </select>
+           
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        
+</div>

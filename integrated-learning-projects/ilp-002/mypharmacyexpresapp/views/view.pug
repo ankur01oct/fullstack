@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        table.table.table-hover
+          thead
+            tr
+              th Name
+              th Manufacturer
+              th Batch No.
+              th Expiration Date
+              th Price
+              th Type
+          tbody
+          each item in phamacydatas
+            tr
+              td #{item.Name}
+              td #{item.Manufacturer}
+              td #{item.Batch_No}
+              td #{item.Expiration_Date}
+              td #{item.Price}
+              td #{item.Type}
+              td.remove-top-padding
+                a(href=`/edit/${item.id}`)
+                  button.btn.btn-primary Edit Me
+              td.remove-top-padding
+                a(href=`/delete/${item.id}`)
+                  button.btn.btn-danger Delete
+        a(href='/add')
+                  button.btn.btn-primary AddMedicines

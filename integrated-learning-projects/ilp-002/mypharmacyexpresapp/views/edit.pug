@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    form.form-horizontal(action=`/edit/${data.id}`, method="post")
+     .form-group
+        label.control-label.col-sm-4(for='Name') Name:
+        .col-sm-4
+          input.form-control(type='text',value= `${data.Name}` placeholder='Enter Name', name="Name" )
+     .form-group
+        label.control-label.col-sm-4(for='Manufacturer') Manufacturer:
+        .col-sm-4
+          input.form-control(type='text',value= `${data.Manufacturer}` placeholder='Enter Manufacturer', name="Manufacturer")
+     .form-group
+        label.control-label.col-sm-4(for='Batch_No') Batch_No:
+        .col-sm-4
+          input.form-control(type='text',value= `${data.Batch_No}` placeholder='Enter Batch_No', name="Batch_No")
+     .form-group
+        label.control-label.col-sm-4(for='Expiration_Date') Expiration_Date:
+        .col-sm-4
+          input.form-control(type='date',value= `${data.Expiration_Date}` placeholder='Enter Expiration_Date', name="Expiration_Date")
+     .form-group
+        label.control-label.col-sm-4(for='Price') Price:
+        .col-sm-4
+          input.form-control(type='text',value= `${data.Price}` placeholder='Enter Price', name="Price")
+     .form-group
+        label.control-label.col-sm-4(for='Type') Type:
+        .col-sm-4
+          select.form-control(name='Type')
+            option(value= '', selected='', disabled='') --Select Type--
+            option(value= 'Capsule',selected= `${data.Type}`== 'Capsule') Capsule
+            option(value= 'Tablet',selected=`${data.Type}` == 'Tablet') Tablet
+            option(value= 'Syrup',selected=`${data.Type}`== 'Syrup') Syrup
+            option(value= 'Gel',selected=`${data.Type}` == 'Gel') Gel
+     .form-group
+        .col-sm-offset-4.col-sm-8
+         button.btn.btn-primary(type='submit') Submit
